@@ -2,6 +2,10 @@
 
 A **Chrome extension** that detects and blurs potentially triggering content on the web. BluRead helps users browse news, social media, and articles with more control over what they see—reducing exposure to violence, self-harm, hate speech, harassment, and explicit content without leaving the page.
 
+Video Demo (click on the image):
+
+[![Watch the video](https://img.youtube.com/vi/lrcxRSkIZhw/hqdefault.jpg)](https://www.youtube.com/embed/lrcxRSkIZhw)
+
 ---
 
 ## Features
