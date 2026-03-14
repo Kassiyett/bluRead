@@ -1,0 +1,225 @@
+:root {
+  --tg-blur: 10px;
+  --tg-sidebar-offset: 0px;
+}
+
+.tg-blurred {
+  filter: blur(var(--tg-blur));
+  user-select: none;
+  cursor: pointer;
+  transition: filter 0.35s ease;
+  position: relative;
+}
+
+.tg-unblurring {
+  transition: filter 0.35s ease !important;
+  filter: blur(0) !important;
+}
+
+.tg-blurred:hover {
+  filter: blur(calc(var(--tg-blur) * 0.7));
+}
+
+.tg-label {
+  all: initial;
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 4px;
+  position: relative;
+  z-index: 2147483646;
+  background: linear-gradient(135deg, rgba(54, 49, 111, 0.92), rgba(100, 76, 184, 0.9));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 8px 12px;
+  margin: 0 var(--tg-sidebar-offset, 0px) 8px 0;
+  max-width: calc(100vw - var(--tg-sidebar-offset, 0px) - 20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 18px rgba(54, 49, 111, 0.35);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tg-label__icon {
+  font-style: normal;
+}
+
+.tg-label__category {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tg-label__hint {
+  grid-column: 2 / -1;
+  font-weight: 500;
+  opacity: 0.9;
+  overflow-wrap: anywhere;
+}
+
+.tg-label__badge {
+  grid-row: 1;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.32);
+}
+
+.tg-modal {
+  all: initial;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.tg-modal__card {
+  all: initial;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(460px, calc(100% - 40px));
+  padding: 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(54, 49, 111, 0.95), rgba(100, 76, 184, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.35);
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: #fff;
+}
+
+.tg-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tg-modal__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.tg-modal__close {
+  all: initial;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.tg-modal__close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.tg-modal__body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.tg-modal__detected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.tg-token {
+  display: inline-block;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #efe7ff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.tg-summary-box {
+  all: initial;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #cfc3ff;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px 14px;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #f4edff;
+}
+
+.tg-summary-box--loading {
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+.tg-summary-box__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d9cdff;
+}
+
+.tg-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tg-btn-reveal,
+.tg-btn-summary {
+  all: initial;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 9px 14px;
+  white-space: nowrap;
+}
+
+.tg-btn-reveal {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.tg-btn-reveal:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.tg-btn-summary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, #4d4bb4, #36316f);
+}
+
+.tg-btn-summary:hover {
+  filter: brightness(1.08);
+}

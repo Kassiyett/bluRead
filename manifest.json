@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "BluRead",
+  "description": "AI-powered content protection — detects and blurs triggering content",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js", "sidebar.js"],
+      "css": ["content.css", "sidebar.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["Bluread-Thumbnail-FV.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
